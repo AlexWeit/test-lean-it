@@ -7,25 +7,31 @@
       Поиск по таблице <input name="query" v-model="searchQuery" />
     </form>
   </div>
-  <myTable
-    :heroes="gridData"
+<!--  <myTable-->
+<!--    :heroes="gridData"-->
+<!--    :columns="gridColumns"-->
+<!--    :filter-key="searchQuery"-->
+<!--  ></myTable>-->
+  <myTableBig
     :columns="gridColumns"
     :filter-key="searchQuery"
-  ></myTable>
+  ></myTableBig>
 </template>
 
 <script>
-import myTable from './components/myTable/myTable.vue'
+// import myTable from './components/myTable/myTable.vue'
+import myTableBig from './components/myTableBig/myTableBig.vue'
 
 export default {
   name: 'App',
   components: {
-    myTable
+    // myTable
+    myTableBig
   },
   data () {
     return {
       searchQuery: '',
-      gridColumns: ['name', 'power', 'age', 'city'],
+      gridColumns: ['id', 'first_name', 'last_name', 'social_insurance_number'],
       gridData: [
         { name: 'Chuck', power: Infinity, age: 50, city: 'NY' },
         { name: 'Bruce', power: 9000, age: 40, city: 'Moscow' },
